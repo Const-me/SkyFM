@@ -1,0 +1,1 @@
+﻿This project builds a library that's shared across the GUI process and background agent process.

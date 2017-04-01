@@ -1,0 +1,72 @@
+﻿<ext:Page
+		x:Class="SkyFM.AboutPage"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+		xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+		xmlns:ext="clr-namespace:XamlExtrensions"
+		xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		mc:Ignorable="d"
+		d:DesignWidth="480"
+		d:DesignHeight="768"
+		Style="{StaticResource stylePageDefault}">
+	<ext:Page.Resources>
+		<Style TargetType="TextBlock" BasedOn="{StaticResource styleTextBlockDefault}" >
+			<Setter Property="FontSize" Value="24"/>
+			<Setter Property="Margin" Value="0,8"/>
+		</Style>
+		<Style TargetType="HyperlinkButton">
+			<Setter Property="FontSize" Value="24"/>
+			<Setter Property="FontFamily" Value="Segoe WP"/>
+		</Style>
+		<Style TargetType="RichTextBox">
+			<Setter Property="Margin" Value="8,12" />
+			<Setter Property="FontSize" Value="22.667" />
+		</Style>
+	</ext:Page.Resources>
+
+	<Grid x:Name="LayoutRoot"
+			Background="Transparent">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="*" />
+		</Grid.RowDefinitions>
+
+		<!-- TitlePanel contains the name of the application and page title -->
+		<TextBlock x:Name="PageTitle" Text="{Binding str.about_title, Source={StaticResource STR}}" Margin="20,20,0,0"
+			Style="{StaticResource PhoneTextTitle1Style}" FontFamily="Segoe WP Light"
+			TextOptions.TextHintingMode="Animated" FontSize="56"
+			Foreground="{StaticResource PhoneSubtleBrush}">
+		</TextBlock>
+		<ScrollViewer Grid.Row="1">
+			<StackPanel x:Name="ContentPanel">
+				<Grid Margin="20,24,20,12">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="Auto" />
+						<ColumnDefinition/>
+					</Grid.ColumnDefinitions>
+					<Border BorderBrush="Black" BorderThickness="1" Margin="0,0,10,0">
+						<Image Source="/const.me.jpg" Stretch="None" />
+					</Border>
+					<Grid Grid.Column="1">
+						<Grid.RowDefinitions>
+							<RowDefinition Height="Auto" />
+							<RowDefinition />
+							<RowDefinition Height="Auto" />
+						</Grid.RowDefinitions>
+						<TextBlock
+							Text="{Binding str.about_copyright, Source={StaticResource STR}}" HorizontalAlignment="Left" Margin="10,-6,0,0" VerticalAlignment="Top" Foreground="{StaticResource PhoneForegroundBrush}"/>
+						<TextBlock x:Name="tbVersion" Grid.Row="1" VerticalAlignment="Center" Margin="10,0,0,0" Foreground="{StaticResource PhoneForegroundBrush}" />
+						<HyperlinkButton Grid.Row="2"
+							Content="const.me/SkyFM" NavigateUri="http://const.me/SkyFM" TargetName="_blank" HorizontalAlignment="Left" Margin="0,0,0,-2" VerticalAlignment="Bottom" Foreground="{StaticResource PhoneAccentBrush}" />
+					</Grid>
+				</Grid>
+
+				<RichTextBox TextAlignment="Justify" x:Name="rtTrademark" />
+				<RichTextBox TextAlignment="Justify" x:Name="rtThirdparty" />
+				<RichTextBox TextAlignment="Justify" x:Name="rtLocalization" />
+			</StackPanel>
+		</ScrollViewer>
+	</Grid>
+</ext:Page>

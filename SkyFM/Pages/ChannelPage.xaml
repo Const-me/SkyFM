@@ -1,0 +1,146 @@
+﻿<ext:PageWithAds
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+		xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+		xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:ext="clr-namespace:XamlExtrensions"
+		xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+		xmlns:ec="clr-namespace:Microsoft.Expression.Interactivity.Core;assembly=Microsoft.Expression.Interactions"
+		x:Class="SkyFM.ChannelPage"
+		mc:Ignorable="d"
+		d:DesignWidth="480"
+		d:DesignHeight="768"
+		Style="{StaticResource stylePageDefault}"
+		shell:SystemTray.ForegroundColor="#FF5555AA"
+		DataContext="{Binding Home.selectedChannel, Source={StaticResource Locator}}">
+
+	<ext:PageWithAds.Resources>
+		<SolidColorBrush x:Name="colorTop" Color="{StaticResource PhoneForegroundColor}" />
+		<SolidColorBrush x:Name="colorTopDim" Color="{StaticResource PhoneSubtleColor}" />
+		<SolidColorBrush x:Name="colorTopDimmer" Color="{StaticResource PhoneSubtleColor}" />
+		<!-- <SolidColorBrush x:Name="colorTop" Color="#FF00FF00" />
+		<SolidColorBrush x:Name="colorTopDim" Color="#FF00AA00" />
+		<SolidColorBrush x:Name="colorTopDimmer" Color="#FF006600" /> -->
+
+		<SolidColorBrush x:Name="colorPlaying" Color="#FF6688CC" />
+		<SolidColorBrush x:Name="colorStatus"  Color="#FF5555AA" />
+
+		<Style x:Name="styleTextBlockChannelItem" BasedOn="{StaticResource styleTextBlockDefault}" TargetType="TextBlock">
+			<Setter Property="FontSize" Value="21.333" />
+		</Style>
+		<ControlTemplate x:Key="templatePlayButton" TargetType="ButtonBase">
+			<Grid x:Name="grid" Background="Transparent">
+				<VisualStateManager.VisualStateGroups>
+					<VisualStateGroup x:Name="CommonStates">
+						<VisualState x:Name="Normal"/>
+						<VisualState x:Name="MouseOver"/>
+						<VisualState x:Name="Pressed">
+							<Storyboard>
+								<ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContentContainer" Storyboard.TargetProperty="Foreground">
+									<DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource PhoneBackgroundBrush}" />
+								</ObjectAnimationUsingKeyFrames>
+								<ObjectAnimationUsingKeyFrames Storyboard.TargetName="ButtonBackground" Storyboard.TargetProperty="Background">
+									<DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource PhoneForegroundBrush}" />
+								</ObjectAnimationUsingKeyFrames>
+								<ObjectAnimationUsingKeyFrames Storyboard.TargetName="ButtonBackground" Storyboard.TargetProperty="BorderBrush">
+									<DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource PhoneForegroundBrush}" />
+								</ObjectAnimationUsingKeyFrames>
+							</Storyboard>
+						</VisualState>
+						<VisualState x:Name="Disabled">
+							<Storyboard>
+								<DoubleAnimation Duration="0" To="0.4" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="grid" d:IsOptimized="True"/>
+							</Storyboard>
+						</VisualState>
+					</VisualStateGroup>
+				</VisualStateManager.VisualStateGroups>
+				<Border x:Name="ButtonBackground" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="0" Background="{TemplateBinding Background}" Margin="{StaticResource PhoneTouchTargetOverhang}" >
+					<ContentControl x:Name="ContentContainer" Foreground="{TemplateBinding Foreground}" HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" Padding="{TemplateBinding Padding}" Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}"/>
+				</Border>
+			</Grid>
+		</ControlTemplate>
+	</ext:PageWithAds.Resources>
+
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="*" />
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+		</Grid.RowDefinitions>
+		<Grid Margin="20">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="Auto"/>
+				<ColumnDefinition/>
+			</Grid.ColumnDefinitions>
+
+			<Border BorderBrush="Black" BorderThickness="1" Grid.RowSpan="4" Margin="0,0,12,0" VerticalAlignment="Top">
+				<Image Source="{Binding image}" Width="180" Stretch="Uniform" />
+			</Border>
+
+			<TextBlock Grid.Column="1" Grid.Row="0" Text="{Binding title}" Foreground="{StaticResource colorTop}"
+					   Style="{StaticResource styleTextBlockChannelItem}" FontFamily="Segoe WP" VerticalAlignment="Top" FontSize="29.333" />
+			<TextBlock Grid.Column="1" Grid.Row="1"
+					   Style="{StaticResource styleTextBlockChannelItem}" Foreground="{StaticResource colorTopDim}" FontSize="24" TextOptions.TextHintingMode="Animated"><Run Text="{Binding str.play_channelDirector, Source={StaticResource STR}}"/><Run Text="{Binding channelDirector}" /></TextBlock>
+			<TextBlock Grid.Column="1" Grid.Row="2" Text="{Binding subtitle, Mode=OneWay}" Foreground="{StaticResource colorTop}"
+					   Style="{StaticResource styleTextBlockChannelItem}" VerticalAlignment="Top" FontSize="24" TextOptions.TextHintingMode="Animated"  />
+		</Grid>
+
+		<ProgressBar Grid.Row="1"  VerticalAlignment="Bottom" IsIndeterminate="{Binding player.isPending, Mode=OneWay}"
+					 Margin="0,14,0,24" Foreground="{StaticResource colorTopDim}" Background="{x:Null}" />
+
+		<Button Grid.Row="2" Content="{Binding btnPlayStop}" HorizontalAlignment="Center" VerticalAlignment="Center"
+				Foreground="{StaticResource colorTop}" BorderBrush="{StaticResource colorTopDimmer}"
+				IsEnabled="{Binding btnPlayStopIsEnabled}" Template="{StaticResource templatePlayButton}">
+			<i:Interaction.Triggers>
+				<i:EventTrigger EventName="Click">
+					<ec:CallMethodAction TargetObject="{Binding}" MethodName="actPlayStop"/>
+				</i:EventTrigger>
+			</i:Interaction.Triggers>
+		</Button>
+
+		<Border Grid.Row="4" Padding="20" >
+			<StackPanel>
+				<TextBlock Text="{Binding player.channelName, Mode=OneWay}" HorizontalAlignment="Center" FontSize="37.333" Margin="0,8" FontFamily="Segoe WP Light" Foreground="{StaticResource colorPlaying}"/>
+				
+				<TextBlock VerticalAlignment="Center" Text="{Binding player.statusLine, Mode=OneWay}" MinHeight="150" FontSize="29.333" Foreground="{StaticResource colorPlaying}"/>
+
+				<Grid DataContext="{Binding player, Mode=OneWay}">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition/>
+						<ColumnDefinition/>
+					</Grid.ColumnDefinitions>
+					<Grid.RowDefinitions>
+						<RowDefinition>
+						</RowDefinition>
+						<RowDefinition/>
+					</Grid.RowDefinitions>
+
+					<TextBlock Grid.Row="0" Grid.Column="0"
+						HorizontalAlignment="Center" FontSize="29.333" Foreground="{StaticResource colorStatus}" Margin="0,8,0,4"
+						Text="{Binding bufferFullnessText}" />
+
+					<TextBlock Grid.Row="0" Grid.Column="1"
+						Text="{Binding str.play_traffic, Source={StaticResource STR}}"
+						HorizontalAlignment="Center" FontSize="29.333" Foreground="{StaticResource colorStatus}" Margin="0,8,0,4"/>
+
+					<ProgressBar Grid.Row="1" Grid.Column="0" Value="{Binding bufferFullness}" VerticalAlignment="Center" Foreground="{StaticResource colorStatus}" Background="{StaticResource PhoneForegroundBrush}" />
+					<TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding downloadedBytes}" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Segoe WP" FontSize="29.333" Foreground="{StaticResource colorStatus}" TextOptions.TextHintingMode="Animated" />
+				</Grid>
+				
+			</StackPanel>
+		</Border>
+
+		<!-- <Grid x:Name="adsPanel" Grid.Row="5" Height="80" /> -->
+		<!-- <ext:AdsControl x:Name="adsControl" Grid.Row="5" Height="80" /> -->
+	</Grid>
+</ext:PageWithAds>

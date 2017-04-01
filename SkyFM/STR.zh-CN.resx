@@ -1,0 +1,266 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="about_version_fmt" xml:space="preserve">
+    <value>版本 {0}, {1}</value>
+  </data>
+  <data name="appbar_login" xml:space="preserve">
+    <value>登录sky.fm精品</value>
+  </data>
+  <data name="appbar_logout" xml:space="preserve">
+    <value>退出sky.fm精品</value>
+  </data>
+  <data name="error_json_no_channels_list" xml:space="preserve">
+    <value>在服务器中没有频道列表</value>
+  </data>
+  <data name="error_json_parse" xml:space="preserve">
+    <value>unexpected JSON</value>
+  </data>
+  <data name="login_error_password" xml:space="preserve">
+    <value>请输入密码</value>
+  </data>
+  <data name="login_error_user" xml:space="preserve">
+    <value>请输入登录</value>
+  </data>
+  <data name="play_button_playthis" xml:space="preserve">
+    <value>播放</value>
+  </data>
+  <data name="play_button_resume" xml:space="preserve">
+    <value>恢复播放</value>
+  </data>
+  <data name="play_button_stop" xml:space="preserve">
+    <value>停止播放</value>
+  </data>
+  <data name="play_errormessage_title" xml:space="preserve">
+    <value>播放错误</value>
+  </data>
+  <data name="play_status_buffering" xml:space="preserve">
+    <value>正在缓冲</value>
+  </data>
+  <data name="play_status_failed_fmt" xml:space="preserve">
+    <value>发生错误： {0}</value>
+  </data>
+  <data name="play_traffic_giga_fmt" xml:space="preserve">
+    <value>{0} GB</value>
+  </data>
+  <data name="play_traffic_kilo_fmt" xml:space="preserve">
+    <value>{0} KB</value>
+  </data>
+  <data name="play_traffic_mega_fmt" xml:space="preserve">
+    <value>{0} MB</value>
+  </data>
+  <data name="rateapp_message_text" xml:space="preserve">
+    <value>你可以为这个程序评分或撰写评价吗﹖</value>
+  </data>
+  <data name="rateapp_message_title" xml:space="preserve">
+    <value>对此应用程序评分</value>
+  </data>
+  <data name="sendreport_message_mailSubject" xml:space="preserve">
+    <value>Sky.fm 自动生成问题报告</value>
+  </data>
+  <data name="sendreport_message_text" xml:space="preserve">
+    <value>你上一次运行这个应用程序时出现错误，
+你想发送一封电子邮件来报告吗？</value>
+  </data>
+  <data name="sendreport_message_title" xml:space="preserve">
+    <value>错误报告</value>
+  </data>
+  <data name="settings_chan_fmt" xml:space="preserve">
+    <value>{0}, {1} kbit/sec, {2}</value>
+  </data>
+  <data name="settings_chan_free" xml:space="preserve">
+    <value>免费</value>
+  </data>
+  <data name="settings_chan_premium" xml:space="preserve">
+    <value>精品订阅</value>
+  </data>
+  <data name="setting_signupMessage_text" xml:space="preserve">
+    <value>精品订阅费用是每年50美元。
+现在就加入我们吗？</value>
+  </data>
+  <data name="setting_signupMessage_title" xml:space="preserve">
+    <value>sky.fm精品服务</value>
+  </data>
+  <data name="splash_error_fmt" xml:space="preserve">
+    <value>无法更新的频道。
+{0}
+按OK重试。</value>
+  </data>
+  <data name="splash_updating" xml:space="preserve">
+    <value>更新频道…</value>
+  </data>
+  <data name="settings_title" xml:space="preserve">
+    <value>我的最爱</value>
+  </data>
+  <data name="about_copyright" xml:space="preserve">
+    <value>sky.fm player © Konstantin, 2012-2013</value>
+  </data>
+  <data name="about_title" xml:space="preserve">
+    <value>关于这个应用程序</value>
+  </data>
+  <data name="play_buffer_fmt" xml:space="preserve">
+    <value>缓冲 {0:P0}</value>
+  </data>
+  <data name="play_channelDirector" xml:space="preserve">
+    <value>通讯管理机：</value>
+  </data>
+  <data name="play_traffic" xml:space="preserve">
+    <value>数据下载量</value>
+  </data>
+  <data name="about_localization_richtext" xml:space="preserve">
+    <value>&lt;p align="Left"&gt;汉化：&lt;a href="http://www.facebook.com/gordon.chou.18"&gt;Gordon Chou&lt;/a&gt;。&lt;/p&gt;</value>
+  </data>
+  <data name="about_thirdparty_richtext" xml:space="preserve">
+    <value>&lt;p&gt;包括源代码 &lt;a href="http://kawagoe.codeplex.com/"&gt;Kawagoe Toolkit&lt;/a&gt;, © Andréas Saudemont.&lt;/p&gt;</value>
+  </data>
+  <data name="about_trademark_richtext" xml:space="preserve">
+    <value>&lt;p align="Left"&gt;&lt;a href="http://www.sky.fm/"&gt;Sky.fm&lt;/a&gt; 是一个注册商标 &lt;a href="http://www.di.fm/"&gt;Digitally Imported, Inc.&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;这个手机应用程序的作者是sky.fm的的精品订阅用户，除此以外他与Digitally Imported, Inc. 并无任何关系。这是对商标的合理使用且受美国宪法所保护&lt;/p&gt;</value>
+  </data>
+  <data name="appbar_about" xml:space="preserve">
+    <value>关于这个应用程序</value>
+  </data>
+  <data name="appbar_preferences" xml:space="preserve">
+    <value>播放我的最爱</value>
+  </data>
+  <data name="login_btn_login" xml:space="preserve">
+    <value>登入</value>
+  </data>
+  <data name="login_btn_skiplogin" xml:space="preserve">
+    <value>跳过登入</value>
+  </data>
+  <data name="login_lbl_mail" xml:space="preserve">
+    <value>电子邮件：</value>
+  </data>
+  <data name="login_lbl_password" xml:space="preserve">
+    <value>密码：</value>
+  </data>
+  <data name="login_login" xml:space="preserve">
+    <value>登录到sky.fm精品：</value>
+  </data>
+  <data name="login_pending" xml:space="preserve">
+    <value>载入中，请稍候...</value>
+  </data>
+  <data name="login_skiplogin" xml:space="preserve">
+    <value>按这里获取免费流量：</value>
+  </data>
+  <data name="login_welcome" xml:space="preserve">
+    <value>欢迎来到sky.fm！</value>
+  </data>
+</root>

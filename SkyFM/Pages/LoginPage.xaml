@@ -1,0 +1,129 @@
+﻿<ext:Page
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+		xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+		xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+		xmlns:ec="clr-namespace:Microsoft.Expression.Interactivity.Core;assembly=Microsoft.Expression.Interactions"
+		xmlns:ext="clr-namespace:XamlExtrensions"
+		x:Class="SkyFM.LoginPage"
+		mc:Ignorable="d"
+		d:DesignWidth="480"
+		d:DesignHeight="800"
+		Style="{StaticResource stylePageDefault}"
+		DataContext="{Binding Login, Source={StaticResource Locator}}">
+	
+	<ext:Page.Resources>
+		<Style x:Key="styleLabel" TargetType="TextBlock" BasedOn="{StaticResource styleTextBlockDefault}" >
+			<Setter Property="FontSize" Value="24" />
+			<Setter Property="VerticalAlignment" Value="Center" />
+			<Setter Property="HorizontalAlignment" Value="Right" />
+			<Setter Property="Margin" Value="0,0,10,0" />
+		</Style>
+
+		<Style x:Key="styleLabelTitle" TargetType="TextBlock" BasedOn="{StaticResource styleLabel}" >
+			<Setter Property="HorizontalAlignment" Value="Center" />
+			<Setter Property="FontFamily" Value="Segoe WP Light" />
+			<Setter Property="FontSize" Value="26" />
+			<Setter Property="Margin" Value="0,8,0,4" />
+		</Style>
+	</ext:Page.Resources>
+
+	<i:Interaction.Triggers>
+		<i:EventTrigger>
+			<ec:CallMethodAction TargetObject="{Binding Mode=OneWay}" MethodName="viewLoaded"/>
+		</i:EventTrigger>
+	</i:Interaction.Triggers>
+	<StackPanel x:Name="LayoutRoot" Background="Transparent"
+				ext:VisualStates.CurrentState="{Binding visualState}">
+		<VisualStateManager.CustomVisualStateManager>
+			<ec:ExtendedVisualStateManager/>
+		</VisualStateManager.CustomVisualStateManager>
+		<VisualStateManager.VisualStateGroups>
+			<VisualStateGroup x:Name="vsg" ec:ExtendedVisualStateManager.UseFluidLayout="True">
+				<VisualState x:Name="NotFetched"/>
+				<VisualState x:Name="RequestSent">
+					<Storyboard>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="panelLogin">
+							<DiscreteObjectKeyFrame KeyTime="0">
+								<DiscreteObjectKeyFrame.Value>
+									<Visibility>Collapsed</Visibility>
+								</DiscreteObjectKeyFrame.Value>
+							</DiscreteObjectKeyFrame>
+						</ObjectAnimationUsingKeyFrames>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="panelLoading">
+							<DiscreteObjectKeyFrame KeyTime="0">
+								<DiscreteObjectKeyFrame.Value>
+									<Visibility>Visible</Visibility>
+								</DiscreteObjectKeyFrame.Value>
+							</DiscreteObjectKeyFrame>
+						</ObjectAnimationUsingKeyFrames>
+					</Storyboard>
+				</VisualState>
+				<VisualState x:Name="Fetched"/>
+				<VisualState x:Name="Failed"/>
+			</VisualStateGroup>
+		</VisualStateManager.VisualStateGroups>
+		<!-- <TextBlock Text="{Binding str.login_welcome, Source={StaticResource STR}}"
+			Style="{StaticResource PhoneTextNormalStyle}"
+			HorizontalAlignment="Center"
+			VerticalAlignment="Center"
+			FontSize="48" Foreground="{StaticResource PhoneSubtleBrush}" FontFamily="Segoe WP Light" Margin="12,100,12,50" TextOptions.TextHintingMode="Animated" TextWrapping="Wrap" /> -->
+		<ext:AutoScalingTextBlock
+			Text="{Binding str.login_welcome, Source={StaticResource STR}}"
+			FontSize="48" MinFontSize="24" MaxFontSize="60"
+			Foreground="{StaticResource PhoneSubtleBrush}" 
+			HorizontalAlignment="Center" VerticalAlignment="Center"
+			FontFamily="Segoe WP Light" Margin="12,100,12,50"
+			TextOptions.TextHintingMode="Animated"
+			TextWrapping="NoWrap" />
+		<Grid x:Name="panelLogin" Margin="20,0">
+			<Grid.RowDefinitions>
+				<RowDefinition/>
+				<RowDefinition/>
+				<RowDefinition/>
+				<RowDefinition/>
+				<RowDefinition/>
+				<RowDefinition/>
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="Auto"/>
+				<ColumnDefinition/>
+			</Grid.ColumnDefinitions>
+
+			<TextBlock Grid.Row="0" Grid.ColumnSpan="2" Text="{Binding str.login_login, Source={StaticResource STR}}" Style="{StaticResource styleLabelTitle}" Foreground="{StaticResource PhoneAccentBrush}"/>
+			<TextBlock Grid.Row="1" Text="{Binding str.login_lbl_mail, Source={StaticResource STR}}" Style="{StaticResource styleLabel}"/>
+			<TextBox x:Name="tbLogin" Grid.Row="1" Grid.Column="1" Text="{Binding valLogin, Mode=TwoWay}" KeyDown="tbLogin_KeyDown" InputScope="EmailSmtpAddress" />
+			<TextBlock Grid.Row="2" Text="{Binding str.login_lbl_password, Source={StaticResource STR}}" Style="{StaticResource styleLabel}"/>
+			<PasswordBox x:Name="tbPassword" Grid.Row="2" Grid.Column="1" Password="{Binding valPassword, Mode=TwoWay}" KeyDown="tbPassword_KeyDown" />
+
+			<Button Grid.Row="3" Grid.ColumnSpan="2" Content="{Binding str.login_btn_login, Source={StaticResource STR}}">
+				<i:Interaction.Triggers>
+					<i:EventTrigger EventName="Click">
+						<ec:CallMethodAction TargetObject="{Binding}" MethodName="actLoginButton"/>
+					</i:EventTrigger>
+				</i:Interaction.Triggers>
+			</Button>
+
+			<TextBlock Grid.Row="4" Grid.ColumnSpan="2" Text="{Binding str.login_skiplogin, Source={StaticResource STR}}" Style="{StaticResource styleLabelTitle}" Margin="0,20,0,4">
+				<TextBlock.Foreground>
+					<SolidColorBrush Color="{StaticResource PhoneAccentColor}"/>
+				</TextBlock.Foreground>
+			</TextBlock>
+			<Button Grid.Row="5" Grid.ColumnSpan="2" Content="{Binding str.login_btn_skiplogin, Source={StaticResource STR}}">
+				<i:Interaction.Triggers>
+					<i:EventTrigger EventName="Click">
+						<ec:CallMethodAction TargetObject="{Binding Mode=OneWay}" MethodName="actSkipLoginButton"/>
+					</i:EventTrigger>
+				</i:Interaction.Triggers>
+			</Button>
+		</Grid>
+		<StackPanel x:Name="panelLoading" Height="100" Visibility="Collapsed">
+			<TextBlock TextWrapping="Wrap" Text="{Binding str.login_pending, Source={StaticResource STR}}"
+				VerticalAlignment="Center" Foreground="{StaticResource PhoneAccentBrush}" TextAlignment="Center" FontFamily="Segoe WP Light" FontSize="29.333" Margin="0,0,0,40"/>
+			<ProgressBar Height="10" IsIndeterminate="True"/>
+		</StackPanel>
+	</StackPanel>
+</ext:Page>

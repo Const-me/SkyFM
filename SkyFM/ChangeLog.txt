@@ -1,0 +1,39 @@
+﻿	1.8
+About text changed
+
+	1.7
+Removed the ads
+
+	1.6
+Japanese localization.
+Bugfix: timeout might happen during the first 5 seconds of playback.
+Exception handling improved once more (damn background audio API makes it extremely difficult to do right).
+"Energy vs. stability" setting.
+Application version is now included in the problem report that are e-mailed to me.
+
+	1.5
+Bug fix: random crash in BitmapSource_SetSource.
+
+	1.4
+Russian and Chinese localization.
+Bug fixes.
+
+	1.3
+Error reporting.
+Bug fixes.
+
+	1.2
+Better (namely, bicubic) image resizing for the live tile image.
+Tested integration with DI.fm channels - OK.
+Bugfix: pause buttin on the universal volume control now stops the playback.
+Error handling improved signifficantly.
+
+	1.1
+
+Many bug fixes, from incorrect colors, to StackOverflowException while playing.
+Also,
+"Comments: When the device's theme is set to light, the textual content of the application cannot be seen. Steps to Reproduce..."
+in the MS test result.
+
+	1.0
+The first version submitted to the marketplace.

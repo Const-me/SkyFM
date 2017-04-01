@@ -1,0 +1,311 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Google.AdMob.Ads.WindowsPhone7</name>
+    </assembly>
+    <members>
+        <member name="T:Google.AdMob.Ads.WindowsPhone7.ErrorCode">
+            <summary>
+            Errors which can be raised by the advertising SDK when making an ad request.
+            </summary>
+        </member>
+        <member name="F:Google.AdMob.Ads.WindowsPhone7.ErrorCode.InvalidRequest">
+            <summary>
+            The ad request is invalid.  The localizedFailureReason error description will have more details on the invalid parameter(s).
+            </summary>
+        </member>
+        <member name="F:Google.AdMob.Ads.WindowsPhone7.ErrorCode.NoFill">
+            <summary>
+            The ad request was successful, but no ad was returned.
+            </summary>
+        </member>
+        <member name="F:Google.AdMob.Ads.WindowsPhone7.ErrorCode.NetworkError">
+            <summary>
+            There was an error loading data from the network.
+            </summary>
+        </member>
+        <member name="F:Google.AdMob.Ads.WindowsPhone7.ErrorCode.OSVersionTooLow">
+            <summary>
+            The current device's OS is below the minimum required version.
+            </summary>
+        </member>
+        <member name="T:Google.AdMob.Ads.WindowsPhone7.AdException">
+            <summary>
+            This exception is thrown or passed in events as the result of ad request errors.
+            </summary>
+        </member>
+        <member name="P:Google.AdMob.Ads.WindowsPhone7.AdException.ErrorCode">
+            <summary>Error code summarizing error</summary>
+        </member>
+        <member name="T:Google.AdMob.Ads.WindowsPhone7.ErrorEventHandler">
+            <summary>Event handler for ad request error events</summary>
+            <param name="sender">Control presenting the error</param>
+            <param name="exception">Exception information</param>
+        </member>
+        <member name="T:Google.AdMob.Ads.WindowsPhone7.GpsLocation">
+            <summary>
+            Provides a single container for all GPS information
+            </summary>
+        </member>
+        <member name="P:Google.AdMob.Ads.WindowsPhone7.GpsLocation.Latitude">
+            <summary>User's current latitude in decimal notation</summary>
+            <example>Google is at 37.422023</example>
+        </member>
+        <member name="P:Google.AdMob.Ads.WindowsPhone7.GpsLocation.Longitude">
+            <summary>User's current longitude in decimal notation</summary>
+            <example>Google is at -122.085067</example>
+        </member>
+        <member name="P:Google.AdMob.Ads.WindowsPhone7.GpsLocation.Accuracy">
+            <summary>The maximum error in GPS location (in meters)</summary>
+        </member>
+        <member name="T:Google.AdMob.Ads.WindowsPhone7.WPF.DynamicApplicationBar">
+            <summary>
+            This is an internal support class, not intended for third party use.
+            </summary>
+        </member>
+        <member name="M:Google.AdMob.Ads.WindowsPhone7.WPF.DynamicApplicationBar.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Google.AdMob.Ads.WindowsPhone7.Support.ObservableBase">
+            <summary>
+            This is an internal support class, not intended for third party use.
+            </summary>
+        </member>
+        <member name="E:Google.AdMob.Ads.WindowsPhone7.Support.ObservableBase.PropertyChanged">
+            <summary>Internal support member</summary>
+        </member>
+        <member name="T:Google.AdMob.Ads.WindowsPhone7.ObservableDictionary`2">
+            <summary>
+            Observable dictionary, provides support for binding to a dictionary
+            </summary>
+        </member>
+        <member name="M:Google.AdMob.Ads.WindowsPhone7.ObservableDictionary`2.Add(System.Collections.Generic.KeyValuePair{`0,`1})">
+            <summary>
+            
+            </summary>
+            <param name="item"></param>
+        </member>
+        <member name="T:Google.AdMob.Ads.WindowsPhone7.WPF.InAppBrowser">
+            <summary>
+            This is an internal support class, not intended for third party use.
+            </summary>
+        </member>
+        <member name="M:Google.AdMob.Ads.WindowsPhone7.WPF.InAppBrowser.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Google.AdMob.Ads.WindowsPhone7.WPF.DisplayAdBase">
+             <summary>
+             Supplies the underlying behavior of an ad control.
+            
+             The Google advertising SDK tries to pull a number of facets about the
+             user and their device automatically.  Some of these pieces of data
+             require specific rights or flags to be set.  If the flags are not set
+             or the application does not request these permissions, these piece
+             of information will not be used for ad targeting:
+            
+             GPS Position - Requires ID_CAP_LOCATION and AllowAutomaticGpsLocation = true
+             Device Unique ID - Requires ID_CAP_IDENTITY_DEVICE
+             </summary>
+        </member>
+        <member name="F:Google.AdMob.Ads.WindowsPhone7.WPF.DisplayAdBase.AdAvailableProperty">
+            <summary>
+            Identifies the <see cref="T:Google.AdMob.Ads.WindowsPhone7.WPF.DisplayAdBase"/>.AdAvailable dependency property.
+            </summary>
+        </member>
+        <member name="F:Google.AdMob.Ads.WindowsPhone7.WPF.DisplayAdBase.TestDeviceIDsProperty">
+            <summary>
+            Identifies the <see cref="T:Google.AdMob.Ads.WindowsPhone7.WPF.DisplayAdBase"/>.TestDeviceIDs dependency property.
+            </summary>
+        </member>
+        <member name="F:Google.AdMob.Ads.WindowsPhone7.WPF.DisplayAdBase.AdUnitIDProperty">
+            <summary>
+            Identifies the <see cref="T:Google.AdMob.Ads.WindowsPhone7.WPF.DisplayAdBase"/>.AdUnitID dependency property.
+            </summary>
+        </member>
+        <member name="F:Google.AdMob.Ads.WindowsPhone7.WPF.DisplayAdBase.AdditionalParametersProperty">
+            <summary>
+            Identifies the <see cref="T:Google.AdMob.Ads.WindowsPhone7.WPF.DisplayAdBase"/>.AdditionalParameters dependency property.
+            </summary>
+        </member>
+        <member name="F:Google.AdMob.Ads.WindowsPhone7.WPF.DisplayAdBase.KeywordsProperty">
+            <summary>
+            Identifies the <see cref="T:Google.AdMob.Ads.WindowsPhone7.WPF.DisplayAdBase"/>.Keywords dependency property.
+            </summary>
+        </member>
+        <member name="F:Google.AdMob.Ads.WindowsPhone7.WPF.DisplayAdBase.GpsLocationProperty">
+            <summary>
+            Identifies the <see cref="T:Google.AdMob.Ads.WindowsPhone7.WPF.DisplayAdBase"/>.GpsLocation dependency property.
+            </summary>
+        </member>
+        <member name="F:Google.AdMob.Ads.WindowsPhone7.WPF.DisplayAdBase.LocationDescriptionProperty">
+            <summary>
+            Identifies the <see cref="T:Google.AdMob.Ads.WindowsPhone7.WPF.DisplayAdBase"/>.LocationDescription dependency property.
+            </summary>
+        </member>
+        <member name="F:Google.AdMob.Ads.WindowsPhone7.WPF.DisplayAdBase.GenderProperty">
+            <summary>
+            Identifies the <see cref="T:Google.AdMob.Ads.WindowsPhone7.WPF.DisplayAdBase"/>.Gender dependency property.
+            </summary>
+        </member>
+        <member name="F:Google.AdMob.Ads.WindowsPhone7.WPF.DisplayAdBase.BirthdayProperty">
+            <summary>
+            Identifies the <see cref="T:Google.AdMob.Ads.WindowsPhone7.WPF.DisplayAdBase"/>.Birthday dependency property.
+            </summary>
+        </member>
+        <member name="M:Google.AdMob.Ads.WindowsPhone7.WPF.DisplayAdBase.SetProperty(System.String,System.Object)">
+            <summary>Sets a key/value pair for extra properties</summary>
+            <remarks>This is provided for forward compatibility</remarks>
+            <param name="name">Property Name</param>
+            <param name="value">Property Value</param>
+        </member>
+        <member name="M:Google.AdMob.Ads.WindowsPhone7.WPF.DisplayAdBase.ClearProperty(System.String)">
+            <summary>Clears a key/value pair for extra properties</summary>
+            <remarks>This is provided for forward compatibility</remarks>
+            <param name="name">Property Name</param>
+        </member>
+        <member name="M:Google.AdMob.Ads.WindowsPhone7.WPF.DisplayAdBase.BeginUpdates">
+            <summary>
+            Turns off automatic ad reloading while properties are being set.
+            </summary>
+        </member>
+        <member name="M:Google.AdMob.Ads.WindowsPhone7.WPF.DisplayAdBase.EndUpdates">
+            <summary>
+            Turns on automatic ad reloading after setting properties.
+            </summary>
+        </member>
+        <member name="M:Google.AdMob.Ads.WindowsPhone7.WPF.DisplayAdBase.ShowNewAd">
+            <summary>Requests a new ad</summary>
+            <remarks>A new ad may not be shown due to throttling, fill, or other issues.</remarks>
+        </member>
+        <member name="M:Google.AdMob.Ads.WindowsPhone7.WPF.DisplayAdBase.MeasureOverride(System.Windows.Size)">
+            <summary>
+            Overrides the MeasureOverride behavior to force control to be the correct size
+            </summary>
+            <param name="availableSize">Parameter is ignored</param>
+            <returns>The forced size of the ad control</returns>
+        </member>
+        <member name="M:Google.AdMob.Ads.WindowsPhone7.WPF.DisplayAdBase.ArrangeOverride(System.Windows.Size)">
+            <summary>
+            Overrides the ArrangeOverride behavior to force control to be the correct size
+            </summary>
+            <param name="finalSize">Parameter is ignored</param>
+            <returns>The forced size of the ad control</returns>
+        </member>
+        <member name="E:Google.AdMob.Ads.WindowsPhone7.WPF.DisplayAdBase.AdLoading">
+            <summary>Sent when a new ad is being requested.</summary>
+        </member>
+        <member name="E:Google.AdMob.Ads.WindowsPhone7.WPF.DisplayAdBase.AdReceived">
+            <summary>Sent when an ad request loaded an ad.  This is a good opportunity to ensure the ad view is visible and in the display area.</summary>
+        </member>
+        <member name="E:Google.AdMob.Ads.WindowsPhone7.WPF.DisplayAdBase.AdFailed">
+            <summary>Sent when an ad request failed.  Normally this is because no network connection was available or no ads were available (i.e. no fill).</summary>
+        </member>
+        <member name="E:Google.AdMob.Ads.WindowsPhone7.WPF.DisplayAdBase.AdPresentingScreen">
+            <summary>Sent just before presenting the user a full screen view, such as a browser, in response to clicking on an ad.  Use this opportunity 
+            to stop animations, time sensitive interactions, etc.</summary>
+        </member>
+        <member name="E:Google.AdMob.Ads.WindowsPhone7.WPF.DisplayAdBase.AdLeavingApplication">
+            <summary>Sent just before the application will background or terminate because the
+            user clicked on an ad that will launch another application (such as the Marketplace).</summary>
+        </member>
+        <member name="P:Google.AdMob.Ads.WindowsPhone7.WPF.DisplayAdBase.AdAvailable">
+            <summary>
+            Gets the ad's availability
+            </summary>
+        </member>
+        <member name="P:Google.AdMob.Ads.WindowsPhone7.WPF.DisplayAdBase.TestDeviceIDs">
+            <summary>
+            Gets or sets the test device ids of this ad.
+            </summary>
+        </member>
+        <member name="P:Google.AdMob.Ads.WindowsPhone7.WPF.DisplayAdBase.AdUnitID">
+            <summary>
+            Gets or sets the AdUnitID of this ad.
+            </summary>
+        </member>
+        <member name="P:Google.AdMob.Ads.WindowsPhone7.WPF.DisplayAdBase.AdditionalParameters">
+            <summary>
+            Gets or sets the AdditionalParameters of this ad.
+            </summary>
+        </member>
+        <member name="P:Google.AdMob.Ads.WindowsPhone7.WPF.DisplayAdBase.Keywords">
+            <summary>
+            Gets or sets the keywords of this ad.
+            </summary>
+        </member>
+        <member name="P:Google.AdMob.Ads.WindowsPhone7.WPF.DisplayAdBase.KeywordList">
+            <summary>
+            Gets or sets the keywords of this ad.
+            </summary>
+        </member>
+        <member name="P:Google.AdMob.Ads.WindowsPhone7.WPF.DisplayAdBase.GpsLocation">
+            <summary>
+            Gets or sets an indication of whether this ad is allowed to use the device GPS
+            </summary>
+        </member>
+        <member name="P:Google.AdMob.Ads.WindowsPhone7.WPF.DisplayAdBase.LocationDescription">
+            <summary>
+            Gets or sets a location the user is interested in or nearby
+            </summary>
+        </member>
+        <member name="P:Google.AdMob.Ads.WindowsPhone7.WPF.DisplayAdBase.Gender">
+            <summary>
+            Gets or sets the presumed gender of the customer.
+            </summary>
+        </member>
+        <member name="P:Google.AdMob.Ads.WindowsPhone7.WPF.DisplayAdBase.Birthday">
+            <summary>
+            Gets or sets the presumed birthdate of the customer
+            </summary>
+        </member>
+        <member name="T:Google.AdMob.Ads.WindowsPhone7.Gender">
+            <summary>
+            Genders to help deliver more relevant ads.
+            </summary>
+        </member>
+        <member name="F:Google.AdMob.Ads.WindowsPhone7.Gender.Unknown">
+            <summary>
+            Gender is unknown.
+            </summary>
+        </member>
+        <member name="F:Google.AdMob.Ads.WindowsPhone7.Gender.Male">
+            <summary>
+            Gender is presumed male.
+            </summary>
+        </member>
+        <member name="F:Google.AdMob.Ads.WindowsPhone7.Gender.Female">
+            <summary>
+            Gender is presumed female.
+            </summary>
+        </member>
+        <member name="T:Google.AdMob.Ads.WindowsPhone7.WPF.XamlActions">
+            <summary>
+            This is an internal support class, not intended for third party use.
+            </summary>
+        </member>
+        <member name="T:Google.AdMob.Ads.WindowsPhone7.WPF.BannerAd">
+            <summary>
+            Control for standard 480 x 75 banner ad.  
+            </summary>
+            <remarks>
+            The size of this ad is fixed.  If too much space is allocated the ad may have blank space 
+            around it.  If too little space is allocated the ad may not be functional and ad-revenue 
+            may be affected.
+            </remarks>
+        </member>
+        <member name="M:Google.AdMob.Ads.WindowsPhone7.WPF.BannerAd.#ctor">
+            <summary>
+            Creates a new 480 x 75 banner ad.
+            </summary>
+        </member>
+        <member name="M:Google.AdMob.Ads.WindowsPhone7.WPF.BannerAd.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+    </members>
+</doc>

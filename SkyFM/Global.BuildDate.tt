@@ -1,0 +1,10 @@
+﻿<#@ template language="C#" #>
+<#@ import namespace="System" #>
+using System;
+<# var dt = DateTime.UtcNow; #>
+
+internal static partial class Global
+{
+	// <#= dt.ToString() #>
+    public static readonly DateTime buildDateTimeUtc = new DateTime( <#= dt.Ticks #>, DateTimeKind.Utc );
+}
